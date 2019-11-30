@@ -23,4 +23,8 @@ public class Production {
 
     @Enumerated(EnumType.STRING)
     private Unit units;
+/*
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "supply_id", nullable = false)
+    private Supply supply;*/
 }

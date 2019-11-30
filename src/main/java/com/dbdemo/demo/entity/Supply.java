@@ -18,11 +18,11 @@ public class Supply {
     private LocalDate date;
     private int capacity;
     private int price;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name ="company_id", nullable = false)
     private Company company;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name ="production_id", nullable = false)
     private Production production;
 }

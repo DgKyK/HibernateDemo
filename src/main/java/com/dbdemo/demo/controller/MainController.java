@@ -3,16 +3,12 @@ package com.dbdemo.demo.controller;
 import com.dbdemo.demo.entity.Company;
 import com.dbdemo.demo.entity.Production;
 import com.dbdemo.demo.entity.Supply;
-import com.dbdemo.demo.repository.CompanyRepository;
-import com.dbdemo.demo.repository.ProductionRepository;
-import com.dbdemo.demo.repository.SupplyRepository;
 import com.dbdemo.demo.service.CompanyService;
 import com.dbdemo.demo.service.ProductionService;
 import com.dbdemo.demo.service.SupplyService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,5 +52,25 @@ public class MainController {
     @GetMapping("/companies")
     public List<Company> getAllCompanies() {
         return companyService.findAll();
+    }
+
+    @GetMapping("companies/firstTask")
+    public List<Company> getAllCompaniesFirstTask() {
+        return companyService.findAllCompanyWithSuppliesBiggerThanOne();
+    }
+
+    @GetMapping("companies/secondTask")
+    public Company getAllCompaniesSecondTask() {
+        return companyService.findLeaderBananaSuppliesCompany();
+    }
+
+    @GetMapping("supplies/thirdTask")
+    public List<Supply> findSupplyThatHaveShelfLifeLessThanWeek() {
+        return  supplyService.findSupplyThatHaveShelfLifeLessThanWeek();
+    }
+
+    @GetMapping("production/forthTask")
+    public List<Production> findCheaperProduction() {
+        return productionService.findCheaperProduction();
     }
 }

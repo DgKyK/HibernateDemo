@@ -20,4 +20,8 @@ public class ProductionService {
     public List<Production> findAll() {
         return productionRepository.findAll();
     }
+
+    public List<Production> findCheaperProduction() {
+        return productionRepository.findCheaperProduction();
+    }
 }

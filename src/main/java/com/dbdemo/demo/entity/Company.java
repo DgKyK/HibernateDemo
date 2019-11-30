@@ -20,4 +20,10 @@ public class Company {
 
     @Enumerated(EnumType.STRING)
     private Activity activity;
+/*
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "supply_id", nullable = false)
+    private Supply supply;*/
+
+
 }

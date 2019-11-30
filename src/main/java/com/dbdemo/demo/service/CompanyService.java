@@ -22,4 +22,11 @@ public class CompanyService {
     public List<Company> findAll() {
         return companyRepository.findAll();
     }
+
+    public List<Company> findAllCompanyWithSuppliesBiggerThanOne() {
+        return companyRepository.findAllCompanyWithSuppliesBiggerThanOne();
+    }
+    public Company findLeaderBananaSuppliesCompany() {
+        return companyRepository.findLeaderBananaSuppliersCompany();
+    }
 }

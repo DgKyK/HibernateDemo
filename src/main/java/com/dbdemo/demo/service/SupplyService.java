@@ -19,4 +19,8 @@ public class SupplyService {
     public List<Supply> findAll() {
         return supplyRepository.findAll();
     }
+
+    public List<Supply> findSupplyThatHaveShelfLifeLessThanWeek() {
+        return supplyRepository.findSupplyThatHaveShelfLifeLessThanWeek();
+    }
 }
