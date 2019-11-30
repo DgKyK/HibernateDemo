@@ -1,6 +1,8 @@
 package com.dbdemo.demo.service;
 
 import com.dbdemo.demo.entity.Company;
+import com.dbdemo.demo.entity.CompanyInfoView;
+import com.dbdemo.demo.repository.CompanyInfoViewRepository;
 import com.dbdemo.demo.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,8 @@ import java.util.List;
 public class CompanyService {
     @Autowired
     private CompanyRepository companyRepository;
+    @Autowired
+    private CompanyInfoViewRepository companyInfoViewRepository;
 
     public List<Company> getAllCompanies() {
         return companyRepository.findAll();
@@ -28,5 +32,9 @@ public class CompanyService {
     }
     public Company findLeaderBananaSuppliesCompany() {
         return companyRepository.findLeaderBananaSuppliersCompany();
+    }
+
+    public List<CompanyInfoView> findAllCompanyInfoView() {
+        return companyInfoViewRepository.findAll();
     }
 }

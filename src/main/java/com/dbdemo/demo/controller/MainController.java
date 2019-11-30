@@ -1,8 +1,6 @@
 package com.dbdemo.demo.controller;
 
-import com.dbdemo.demo.entity.Company;
-import com.dbdemo.demo.entity.Production;
-import com.dbdemo.demo.entity.Supply;
+import com.dbdemo.demo.entity.*;
 import com.dbdemo.demo.service.CompanyService;
 import com.dbdemo.demo.service.ProductionService;
 import com.dbdemo.demo.service.SupplyService;
@@ -72,5 +70,25 @@ public class MainController {
     @GetMapping("production/forthTask")
     public List<Production> findCheaperProduction() {
         return productionService.findCheaperProduction();
+    }
+
+    @GetMapping("supplies-views")
+    public List<SuppliesViews> findAllSuppliesViewsInfo() {
+        return supplyService.findAllSuppliesViews();
+    }
+
+    @GetMapping("company-info")
+    public List<CompanyInfoView> findAllCompanyInfo() {
+        return companyService.findAllCompanyInfoView();
+    }
+
+    @GetMapping("production-info")
+    public List<ProductionInfoView> findAllProductionInfo() {
+        return productionService.findAllProductionInfo();
+    }
+
+    @GetMapping("general-info")
+    public List<GeneralInfoView> findAllGeneralInfo() {
+        return supplyService.findAllGeneralInfo();
     }
 }
